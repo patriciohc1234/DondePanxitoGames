@@ -25,7 +25,7 @@ SECRET_KEY = 'vzb-9d-d*dgw-v-_z6z0lb$6d0!47k6(tej@vt1(o9#-vu7m+j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'patogames.pythonanywhere.com']
 
 
 # Application definition
