@@ -41,7 +41,7 @@
             <p>{{ post.text|linebreaksbr }}</p>
             {{ post.img }}
             <img src="media/{{post.img}}">
-            <a href="{% url 'post_detail' pk=post.pk %}">Conocer</a>
+            <a href="{% url 'post_detail' pk=post.pk %}">Ver Juegos</a>
         </div>
   {% endfor %}
 {% else %}
@@ -53,8 +53,8 @@
             </div>
             <h1>{{ post.title }}</h1>
             <p>{{ post.text|linebreaksbr }}</p>
-            <img src="media/{{ post.imagen }}">
-            {{ post.imagen }}
+            <img src="media/{{ post.img }}">
+            {{ post.img }}
         </div>
   {% endfor %}
 {% endif %}
