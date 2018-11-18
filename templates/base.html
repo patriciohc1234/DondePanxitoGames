@@ -1,0 +1,146 @@
+{% load staticfiles %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Donde Panxito Games{% endblock %}</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  {% block css %}{% endblock %}
+</head>
+<body>
+<header>
+  <input type="checkbox" name="checkbox" id="check-offcanvas">
+            <nav class="menu-pegajoso">
+                <div class="content-pegajoso">
+                    <img src="{% static 'img/logo.jpg' %}" id="logo-tienda" alt="logo-tienda">
+                    <ul class="options-pegajoso">
+                        <li><a href="{% url 'home' %}">INICIO</a></li>
+                        <li><a href="{% url 'post_list' %}">JUEGOS</a></li>
+						<li><a href="{% url 'signup' %}">REGISTRO DE USUARIOS</a></li>
+                        <li>{% block canvas %}{% endblock %}</li>
+                    </ul>
+                    <label for="check-offcanvas"><img src="{% static 'img/menu.svg' %}" id="btn-offcanvas" alt="boton-menu"></label>
+                </div>
+            </nav>
+            <nav class="menu-offcanvas">
+                <div class="content-offcanvas">
+                    <ul>
+                        <li><a href="{% url 'home' %}" id="item1">INICIO</a></li>
+                        <li><a href="{% url 'post_list' %}" id="item2">JUEGOS</a></li>
+                        <li><a href="" id="item3">REGISTRO DE USUARIOS</a></li>
+                        <li>{% block botom %}{% endblock %}</li>
+                    </ul>
+                </div>
+            </nav>
+</header>
+  <main>
+      <div class="container-fluid">
+            {% block content %}
+            {% endblock %}
+      </div>
+  </main>
+<footer>
+        <div id="boletin-color">
+            <div id="bloque-footer">
+                <div id="boletin">
+                <h3>Boletín</h3>
+              <div id="bloque-correo">
+                <input name="email" size="18" type="text">
+                <button type="submit" name="submitNewsletter"><img src="{% static 'img/right.png' %}"></button>
+              </div>
+            </div>
+            <div id="redes-sociales">
+                <h3>Síguenos</h3>
+                <div id="bloque-redes">
+                <a href="#"><img src="{% static 'img/facebook.png' %}"></a>
+                <a href="#"><img src="{% static 'img/twitter.png' %}"></a>
+                <a href="#"><img src="{% static 'img/web.png' %}"></a>
+                <a href="#"><img src="{% static 'img/googleplus.png' %}"></a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="pie-pagina">
+            <div id="tabla-pagina">
+                <table id="tabla">
+                    <tr>
+                        <td><h3>Categorías</h3></td>
+                        <td><h3>Información</h3></td>
+                        <td><h3>Mi Cuenta</h3></td>
+                        <td><h3>Información sobre la tienda</h3></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">Tarjetas Prepago</a>
+                        </td>
+                        <td>
+                            <a href="#">Promociones especiales</a>
+                        </td>
+                        <td>
+                            <a href="#">Mis pedidos</a>
+                        </td>
+                        <td><img src="{% static 'img/location.png' %}">GamerChile, Santago, Chile</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#">Recargas</a>
+                        </td>
+                        <td>
+                            <a href="#">Contáctenos</a>
+                        </td>
+                        <td>
+                            <a href="#">Mis facturas por abono</a>
+                        </td>
+                        <td><img src="{% static 'img/telephone.png' %}">Llámenos ahora: <a href="tel:+56971075952" id="cel">+56971075952</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Minecraft</a></td>
+                        <td><a href="#">¿Donde Depositar?</a></td>
+                        <td><a href="#">Mis Direcciones</a></td>
+                        <td><img src="{% static 'img/mail.png' %}">Email: <a href="mailto:ventas@gamerchile.cl">ventas@gamerchile.cl</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Riots Points</a></td>
+                        <td><a href="#">Términos y condiciones</a></td>
+                        <td><a href="#">Mis datos personales</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Steam</a></td>
+                        <td><a href="#">Sobre nosotros</a></td>
+                        <td><a href="#">Mis cupones de descuento</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Consolas</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Origins</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">BattleNet</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Juegos Pc</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="logos-pagos">
+                <div id="logos">
+                    <img src="{% static 'img/caja-vecina.png' %}">
+                    <img src="{% static 'img/banco-estado.png' %}">
+                    <img src="{% static 'img/webpay.png' %}">
+                    <img src="{% static 'img/servipag.jpg' %}">
+                </div>
+            </div>
+        </div>
+    </footer>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
